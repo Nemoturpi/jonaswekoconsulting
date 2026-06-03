@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Jonas Weko, PhD — Consultant en géopolitique et intelligence économique, spécialisé en Afrique de l'Ouest et centrale.">
+<title>Jonas Weko, PhD — Géopolitique & Intelligence Économique</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ── TOKENS ─────────────────────────────────────────── */
+:root {
+  --navy:    #0D1F3C;
+  --navy2:   #0a1830;
+  --navy3:   #1a3055;
+  --bord:    #6B1A2A;
+  --gold:    #C5922A;
+  --gold2:   rgba(197,146,42,.18);
+  --white:   #FFFFFF;
+  --gray:    #F4F4F0;
+  --txt:     #3a3a3a;
+  --txt2:    #666;
+  --ff-h:    'Barlow Condensed', 'Arial Narrow', sans-serif;
+  --ff-b:    'Source Sans 3', system-ui, sans-serif;
+  --nav-h:   64px;
+  --sp:      92px 0;
+}
+
+/* ── RESET ───────────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--ff-b);font-size:16px;line-height:1.7;color:var(--txt);background:var(--white);text-wrap:pretty}
+img{max-width:100%;height:auto;display:block}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{cursor:pointer;font-family:var(--ff-b)}
+
+/* ── LAYOUT ──────────────────────────────────────────── */
+.container{max-width:1180px;margin:0 auto;padding:0 36px}
+
+/* ── COMMON ──────────────────────────────────────────── */
+.sec-over{display:block;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.sec-title{font-family:var(--ff-h);font-size:42px;font-weight:700;line-height:1;color:var(--navy);letter-spacing:.02em;text-transform:uppercase;margin-bottom:20px}
+.sec-title--w{color:var(--white)}
+.sec-bar{width:44px;height:2px;background:var(--gold);margin:0 auto}
+.sec-head{text-align:center;margin-bottom:60px}
+
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 24px;font-size:14px;font-weight:500;letter-spacing:.04em;border-radius:2px;transition:all .22s;border:none}
+.btn-primary{background:var(--bord);border:1px solid var(--gold);color:var(--white)}
+.btn-primary:hover{background:#7d1f30;box-shadow:0 4px 18px rgba(107,26,42,.35)}
+.btn-outline{background:transparent;border:1px solid rgba(255,255,255,.55);color:var(--white)}
+.btn-outline:hover{border-color:var(--white);background:rgba(255,255,255,.07)}
+
+/* ── SCROLL FADE ─────────────────────────────────────── */
+/* Content always visible; animation is progressive enhancement only */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+.fi.anim{animation:fadeUp .45s ease-out both}
+.fi.anim.d1{animation-delay:.08s}.fi.anim.d2{animation-delay:.16s}.fi.anim.d3{animation-delay:.24s}
+
+/* ════════════════════════════════════════════════════════
+   NAV
+════════════════════════════════════════════════════════ */
+.nav{position:sticky;top:0;z-index:1000;background:rgba(247,245,239,.94);border-bottom:1px solid rgba(13,31,60,.08);height:var(--nav-h);display:flex;align-items:center;backdrop-filter:saturate(1.2) blur(12px);transition:box-shadow .3s,background .3s}
+.nav.shad{box-shadow:0 10px 30px rgba(13,31,60,.1)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;width:100%}
+.nav-logo{font-family:var(--ff-h);font-size:20px;font-weight:700;color:var(--navy);letter-spacing:.04em;text-transform:uppercase;white-space:nowrap;flex-shrink:0}
+.nav-links{display:flex;gap:4px;flex:1;justify-content:center;background:rgba(255,255,255,.58);border:1px solid rgba(13,31,60,.08);border-radius:6px;padding:4px;max-width:max-content;box-shadow:0 8px 22px rgba(13,31,60,.04)}
+.nav-links a{font-family:var(--ff-b);font-size:12.5px;font-weight:600;color:rgba(13,31,60,.62);letter-spacing:.035em;position:relative;border-radius:4px;padding:8px 12px;transition:color .2s,background .2s}
+.nav-links a::after{display:none}
+.nav-links a:hover{color:var(--navy);background:rgba(13,31,60,.05)}
+.nav-links a.act{color:var(--white);background:var(--navy)}
+.nav-r{display:flex;align-items:center;gap:18px;flex-shrink:0}
+.lang{display:flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;letter-spacing:.06em}
+.lang-btn{display:inline-flex;align-items:center;gap:5px;background:none;border:none;color:rgba(13,31,60,.48);padding:3px 6px;transition:color .2s}
+.lang-btn.act{color:var(--gold)}
+.flag{width:17px;height:11px;display:inline-block;border:1px solid rgba(13,31,60,.18);box-shadow:0 0 0 1px rgba(255,255,255,.35) inset}
+.flag-fr{background:linear-gradient(90deg,#0055a4 0 33.333%,#fff 33.333% 66.666%,#ef4135 66.666% 100%)}
+.flag-gb{background:center/cover no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3CclipPath id='a'%3E%3Cpath d='M0 0h60v30H0z'/%3E%3C/clipPath%3E%3Cpath fill='%23012169' d='M0 0h60v30H0z'/%3E%3Cg clip-path='url(%23a)'%3E%3Cpath stroke='%23fff' stroke-width='6' d='M0 0l60 30M60 0L0 30'/%3E%3Cpath stroke='%23c8102e' stroke-width='3.2' d='M0 0l60 30M60 0L0 30'/%3E%3Cpath stroke='%23fff' stroke-width='10' d='M30 0v30M0 15h60'/%3E%3Cpath stroke='%23c8102e' stroke-width='6' d='M30 0v30M0 15h60'/%3E%3C/g%3E%3C/svg%3E")}
+.lang-sep{color:rgba(13,31,60,.22);font-size:11px}
+.nav .btn-primary{background:var(--navy);border-color:var(--navy);color:var(--white)}
+.nav .btn-primary:hover{background:#142a4d;box-shadow:0 6px 18px rgba(13,31,60,.2)}
+
+/* ════════════════════════════════════════════════════════
+   HERO
+════════════════════════════════════════════════════════ */
+.hero{background:#f7f5ef;min-height:clamp(520px,calc(78vh - var(--nav-h)),680px);padding:64px 0 68px;position:relative;overflow:hidden;border-bottom:1px solid rgba(13,31,60,.1);display:flex;align-items:center}
+.hero-inner{display:grid;grid-template-columns:340px minmax(0,1fr);gap:72px;align-items:center;max-width:1120px;margin:0 auto;position:relative;z-index:1}
+.hero-copy{text-align:left}
+.hero-tag{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--bord);margin-bottom:18px;display:block}
+.hero-h1{font-family:var(--ff-h);font-size:68px;font-weight:700;color:var(--navy);line-height:.92;letter-spacing:.02em;text-transform:uppercase;margin:0 0 18px;max-width:740px}
+.hero-sub{font-family:var(--ff-h);font-size:28px;color:var(--gold);margin:0 0 16px;font-weight:600;line-height:1.05;letter-spacing:.02em;max-width:680px}
+.hero-val{font-size:17px;color:#4e5665;max-width:650px;margin:0 0 26px;line-height:1.6}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;justify-content:flex-start}
+.hero .btn{min-width:190px;justify-content:center}
+.hero .btn-primary{background:var(--navy);border-color:var(--navy);color:var(--white)}
+.hero .btn-primary:hover{background:#142a4d;box-shadow:0 6px 18px rgba(13,31,60,.22)}
+.hero .btn-outline{border-color:rgba(13,31,60,.38);color:var(--navy)}
+.hero .btn-outline:hover{border-color:var(--navy);background:rgba(13,31,60,.05)}
+.hero-media{position:relative;justify-self:start;width:100%;max-width:340px}
+.hero-media::before{content:'';position:absolute;inset:16px -16px -16px 16px;border:1px solid rgba(197,146,42,.34);z-index:-1}
+.hero-img{width:100%;aspect-ratio:1/1;object-fit:contain;object-position:center;background:#e7e5df;border:1px solid rgba(13,31,60,.16);box-shadow:0 18px 42px rgba(13,31,60,.16)}
+
+/* Trust banner */
+.trust{background:var(--white);border-bottom:1px solid rgba(13,31,60,.08);padding:28px 0}
+.trust-inner{display:grid;grid-template-columns:260px 1fr;gap:34px;align-items:center}
+.trust-label{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(13,31,60,.54);line-height:1.55}
+.trust-logos{display:grid;grid-template-columns:repeat(5,minmax(110px,1fr));gap:14px;align-items:start}
+.trust-item{position:relative;display:grid;grid-template-rows:58px auto;place-items:center;gap:9px;min-height:0;padding:0;overflow:visible}
+.trust-item::before{content:'';grid-column:1;grid-row:1;width:100%;height:58px;border:1px solid rgba(13,31,60,.08);background:#f1f0eb}
+.trust-item::after{content:'';grid-column:1;grid-row:1;width:100%;height:58px;background:rgba(247,245,239,.42);pointer-events:none}
+.trust-mark{grid-column:1;grid-row:1;position:relative;z-index:1;height:28px;max-width:92px;object-fit:contain;filter:grayscale(1) contrast(.9);opacity:.62}
+.trust-mark--seal{height:32px}
+.trust-mark--tall{height:36px}
+.trust-mark-text{grid-column:1;grid-row:1;position:relative;z-index:1;font-family:var(--ff-h);font-size:24px;font-weight:700;letter-spacing:.08em;color:rgba(13,31,60,.5);line-height:1}
+.trust-name{grid-column:1;grid-row:2;position:relative;z-index:1;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(13,31,60,.62);text-align:center;line-height:1.2}
+
+/* ════════════════════════════════════════════════════════
+   EXPERTISE
+════════════════════════════════════════════════════════ */
+.expertise{background:var(--white);padding:var(--sp)}
+.exp-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.exp-card{background:var(--white);border-left:3px solid var(--bord);box-shadow:0 2px 18px rgba(13,31,60,.07);transition:box-shadow .25s}
+.exp-card:hover{box-shadow:0 8px 30px rgba(13,31,60,.12)}
+.exp-card-trigger{display:flex;align-items:flex-start;gap:16px;padding:28px 26px;cursor:pointer;width:100%;background:none;border:none;text-align:left}
+.exp-card-trigger:focus-visible{outline:2px solid var(--gold);outline-offset:-2px}
+.exp-icon{width:36px;height:36px;color:var(--bord);flex-shrink:0;margin-top:2px}
+.exp-card-hd{flex:1}
+.exp-title{font-family:var(--ff-h);font-size:22px;font-weight:700;color:var(--navy);letter-spacing:.02em;text-transform:uppercase;line-height:1.05;margin-bottom:0}
+.exp-chevron{width:18px;height:18px;color:var(--gold);flex-shrink:0;margin-top:4px;transition:transform .3s}
+.exp-card.open .exp-chevron{transform:rotate(180deg)}
+.exp-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s ease}
+.exp-card.open .exp-body{grid-template-rows:1fr}
+.exp-body-inner{overflow:hidden;padding:0 26px}
+.exp-card.open .exp-body-inner{padding-bottom:24px}
+.exp-def{font-size:13.5px;font-style:italic;color:var(--txt2);margin-bottom:14px;line-height:1.6;padding-top:2px}
+.exp-list li{font-size:13.5px;color:#4a4a4a;padding:4px 0 4px 18px;position:relative;line-height:1.5}
+.exp-list li::before{content:'◆';position:absolute;left:0;top:7px;font-size:7px;color:var(--gold)}
+
+/* ════════════════════════════════════════════════════════
+   PROBLEMATIQUES
+════════════════════════════════════════════════════════ */
+.prob{background:var(--gray);padding:var(--sp)}
+.enjeux-shell{display:grid;grid-template-columns:300px 1fr;gap:22px;align-items:start}
+.enjeux-tabs{display:grid;gap:10px}
+.enjeu-tab{width:100%;border:1px solid rgba(13,31,60,.12);background:var(--white);padding:20px 20px;text-align:left;color:var(--navy);transition:background .2s,border-color .2s,color .2s,box-shadow .2s}
+.enjeu-tab:hover{border-color:rgba(197,146,42,.55)}
+.enjeu-tab.is-active{background:var(--navy);border-color:var(--navy);color:var(--white);box-shadow:0 10px 24px rgba(13,31,60,.12)}
+.enjeu-tab-title{display:block;font-family:var(--ff-h);font-size:25px;font-weight:700;letter-spacing:.02em;text-transform:uppercase;line-height:1}
+.enjeu-tab-sub{display:block;margin-top:8px;font-size:12.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:rgba(13,31,60,.46)}
+.enjeu-tab.is-active .enjeu-tab-sub{color:rgba(255,255,255,.58)}
+.enjeux-panel-wrap{background:var(--white);border:1px solid rgba(13,31,60,.08);box-shadow:0 2px 14px rgba(13,31,60,.05);min-height:390px}
+.enjeu-panel{display:none;padding:30px 34px}
+.enjeu-panel.is-active{display:block}
+.enjeu-panel-title{font-family:var(--ff-h);font-size:34px;font-weight:700;letter-spacing:.02em;text-transform:uppercase;line-height:1;color:var(--navy);margin-bottom:22px}
+.enjeu-list{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid rgba(13,31,60,.08)}
+.enjeu-list li{position:relative;min-height:98px;padding:22px 22px 22px 26px;border-bottom:1px solid rgba(13,31,60,.08);font-size:14.5px;line-height:1.55;color:#424955}
+.enjeu-list li:nth-last-child(-n+2){border-bottom:none}
+.enjeu-list li:nth-child(odd){border-right:1px solid rgba(13,31,60,.08)}
+.enjeu-list li::before{content:'';position:absolute;left:0;top:29px;width:7px;height:7px;background:var(--gold)}
+
+/* ════════════════════════════════════════════════════════
+   LIVRABLES
+════════════════════════════════════════════════════════ */
+.livr{background:var(--white);padding:var(--sp)}
+.livr-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:28px}
+.livr-card{border:1px solid rgba(197,146,42,.22);padding:22px 18px;border-radius:2px;transition:box-shadow .25s,border-color .25s}
+.livr-card:hover{box-shadow:0 4px 18px rgba(13,31,60,.08);border-color:var(--gold)}
+.livr-title{font-family:var(--ff-h);font-size:21px;font-weight:700;color:var(--navy);letter-spacing:.02em;text-transform:uppercase;margin-bottom:9px;line-height:1.05}
+.badge{display:inline-block;font-size:10px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:3px 9px;border-radius:2px;margin-bottom:10px}
+.bt{background:rgba(13,31,60,.08);color:var(--navy)}
+.bp{background:rgba(107,26,42,.1);color:var(--bord)}
+.bv{background:rgba(197,146,42,.12);color:#8a6418}
+.livr-desc{font-size:13px;color:#555;line-height:1.6}
+.livr-note{text-align:center;font-size:13.5px;font-style:italic;color:#999}
+
+/* ════════════════════════════════════════════════════════
+   PROFIL
+════════════════════════════════════════════════════════ */
+.profil{background:var(--navy);padding:var(--sp)}
+.profil-inner{display:grid;grid-template-columns:300px 1fr;gap:60px;align-items:start}
+.profil-photo{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top center;border:2px solid var(--gold);border-radius:3px;display:block}
+.profil-over{display:block;font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.profil-name{font-family:var(--ff-h);font-size:46px;font-weight:700;color:var(--white);letter-spacing:.02em;text-transform:uppercase;line-height:1;margin-bottom:22px}
+.profil-bio{font-size:16px;color:rgba(255,255,255,.77);line-height:1.85;margin-bottom:28px}
+.lang-tags{display:flex;gap:9px;flex-wrap:wrap}
+.lang-tag{background:rgba(197,146,42,.13);border:1px solid rgba(197,146,42,.35);color:var(--gold);font-size:12.5px;font-weight:500;padding:4px 14px;border-radius:20px}
+/* Accomplishments */
+.acc-wrap{background:var(--navy2);padding:44px;margin-top:56px}
+.acc-title{font-family:var(--ff-h);font-size:24px;font-weight:700;color:var(--gold);letter-spacing:.02em;text-transform:uppercase;margin-bottom:26px}
+.acc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.acc-group{border:1px solid rgba(197,146,42,.2);background:rgba(255,255,255,.03);padding:24px}
+.acc-group-title{font-family:var(--ff-h);font-size:22px;font-weight:700;letter-spacing:.02em;text-transform:uppercase;color:var(--white);line-height:1;margin-bottom:16px}
+.acc-item{display:flex;gap:11px;align-items:flex-start;font-size:13.5px;color:rgba(255,255,255,.78);line-height:1.6;padding:9px 0;border-top:1px solid rgba(255,255,255,.06)}
+.acc-item:first-of-type{border-top:none;padding-top:0}
+.acc-blt{color:var(--gold);font-size:8px;flex-shrink:0;margin-top:5px}
+
+/* ════════════════════════════════════════════════════════
+   REFERENCES
+════════════════════════════════════════════════════════ */
+.refs{background:var(--gray);padding:var(--sp)}
+.refs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-bottom:22px}
+.ref-card{background:var(--white);border:1px solid rgba(197,146,42,.22);box-shadow:0 2px 14px rgba(13,31,60,.06);padding:30px 22px;text-align:center;transition:box-shadow .25s}
+.ref-card:hover{box-shadow:0 6px 22px rgba(13,31,60,.1)}
+.ref-init{width:62px;height:62px;background:var(--bord);border:2px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--ff-h);font-size:24px;font-weight:700;color:var(--gold);margin:0 auto 14px}
+.ref-name{font-family:var(--ff-h);font-size:22px;font-weight:700;color:var(--navy);letter-spacing:.02em;text-transform:uppercase;line-height:1.05;margin-bottom:6px}
+.ref-role{font-size:13px;color:var(--txt2);line-height:1.5}
+.refs-note{text-align:center;font-size:13px;font-style:italic;color:#999}
+
+/* ════════════════════════════════════════════════════════
+   CONTACT
+════════════════════════════════════════════════════════ */
+.contact{background:var(--navy);padding:var(--sp)}
+.contact-head{text-align:center;margin-bottom:56px}
+.contact-head h2{font-family:var(--ff-h);font-size:46px;font-weight:700;color:var(--white);letter-spacing:.02em;text-transform:uppercase;line-height:1;margin-bottom:14px}
+.contact-head p{font-size:16px;color:rgba(255,255,255,.65)}
+.contact-grid{display:grid;grid-template-columns:1fr 1.5fr;gap:52px;align-items:start}
+.contact-info h3{font-family:var(--ff-h);font-size:24px;font-weight:700;color:var(--gold);letter-spacing:.02em;text-transform:uppercase;margin-bottom:22px}
+.contact-link{display:flex;align-items:center;gap:11px;color:var(--gold);font-size:14.5px;margin-bottom:14px;transition:opacity .2s}
+.contact-link:hover{opacity:.75}
+.contact-link svg{width:17px;height:17px;flex-shrink:0}
+.contact-note{font-size:12.5px;font-style:italic;color:rgba(255,255,255,.35);margin-top:22px;line-height:1.6}
+/* Form */
+.form-box{background:var(--navy2);padding:32px;border:1px solid rgba(197,146,42,.18)}
+.fg{margin-bottom:18px}
+.fg label{display:block;font-size:11px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:7px}
+.fg input,.fg select,.fg textarea{width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.11);color:var(--white);font-family:var(--ff-b);font-size:14.5px;padding:11px 14px;border-radius:2px;outline:none;transition:border-color .2s;-webkit-appearance:none}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--gold)}
+.fg select{cursor:pointer}
+.fg select option{background:var(--navy)}
+.fg textarea{resize:vertical;min-height:110px}
+.fg input::placeholder,.fg textarea::placeholder{color:rgba(255,255,255,.28)}
+.f-err{display:none;font-size:11.5px;color:#e07a7a;margin-top:4px}
+.f-ok{display:none;background:rgba(197,146,42,.12);border:1px solid rgba(197,146,42,.4);color:var(--gold);padding:14px;text-align:center;font-size:13.5px;margin-top:14px;border-radius:2px}
+
+/* ════════════════════════════════════════════════════════
+   FOOTER
+════════════════════════════════════════════════════════ */
+footer{background:var(--navy);border-top:1px solid rgba(197,146,42,.28);padding:22px 0 14px}
+.foot-inner{display:flex;align-items:center;justify-content:space-between}
+.foot-brand{font-family:var(--ff-h);font-size:16px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+.foot-soc a{color:rgba(255,255,255,.5);transition:color .2s}
+.foot-soc a:hover{color:var(--gold)}
+.foot-soc svg{width:19px;height:19px}
+.foot-legal a{font-size:12px;color:rgba(255,255,255,.38);transition:color .2s}
+.foot-legal a:hover{color:rgba(255,255,255,.65)}
+.foot-sub{text-align:center;font-size:11.5px;font-style:italic;color:rgba(255,255,255,.25);margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,.05)}
+
+/* ════════════════════════════════════════════════════════
+   RESPONSIVE
+════════════════════════════════════════════════════════ */
+@media(max-width:1024px){
+  .nav-links{gap:2px}
+  .nav-links a{padding:8px 9px}
+  .hero{min-height:auto;padding:68px 0 70px}
+  .hero-inner{grid-template-columns:300px minmax(0,1fr);gap:46px}
+  .hero-h1{font-size:54px}
+  .hero-sub{font-size:24px}
+  .hero-media{max-width:300px}
+  .livr-grid{grid-template-columns:1fr 1fr}
+  .profil-inner{grid-template-columns:240px 1fr;gap:40px}
+  .acc-grid{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  :root{--sp:64px 0}
+  .nav-links{display:none}
+  .nav-logo{font-size:18px}
+  .hero{padding:52px 0 58px}
+  .hero-inner{grid-template-columns:1fr;gap:34px}
+  .hero-copy{text-align:center}
+  .hero-h1{font-size:36px}
+  .hero-sub{font-size:18px}
+  .hero-val{font-size:16px;margin-left:auto;margin-right:auto}
+  .hero-ctas{flex-direction:column;align-items:stretch;justify-content:center}
+  .hero-media{justify-self:center;max-width:260px}
+  .trust-inner{grid-template-columns:1fr;text-align:center;gap:18px}
+  .trust-logos{grid-template-columns:repeat(2,minmax(120px,1fr))}
+  .enjeux-shell{grid-template-columns:1fr}
+  .enjeux-tabs{grid-template-columns:1fr}
+  .enjeu-list{grid-template-columns:1fr;border-left:none}
+  .enjeu-list li{min-height:auto}
+  .enjeu-list li:nth-child(odd){border-right:none}
+  .enjeu-list li:nth-last-child(-n+2){border-bottom:1px solid rgba(13,31,60,.08)}
+  .enjeu-list li:last-child{border-bottom:none}
+  .exp-grid,.livr-grid,.refs-grid{grid-template-columns:1fr}
+  .profil-inner{grid-template-columns:1fr}
+  .profil-photo{max-width:220px}
+  .contact-grid{grid-template-columns:1fr}
+  .foot-inner{flex-direction:column;gap:14px;text-align:center}
+  .sec-title{font-size:28px}
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     NAV
+══════════════════════════════════════════════ -->
+<nav class="nav" id="main-nav" aria-label="Navigation principale">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo" aria-label="Jonas Weko — Accueil">Jonas Weko</a>
+      <ul class="nav-links" role="list">
+        <li><a href="#expertises" data-fr="Expertises" data-en="Expertise">Expertises</a></li>
+        <li><a href="#problematiques" data-fr="Vos enjeux" data-en="Challenges">Vos enjeux</a></li>
+        <li><a href="#livrables" data-fr="Prestations" data-en="Services">Prestations</a></li>
+        <li><a href="#profil" data-fr="Profil" data-en="Profile">Profil</a></li>
+        <li><a href="#contact" data-fr="Contacter" data-en="Contact">Contacter</a></li>
+      </ul>
+      <div class="nav-r">
+        <div class="lang" aria-label="Sélecteur de langue">
+          <button class="lang-btn act" id="btn-fr" onclick="setLang('fr')" aria-pressed="true"><span class="flag flag-fr" aria-hidden="true"></span>FR</button>
+          <span class="lang-sep">|</span>
+          <button class="lang-btn" id="btn-en" onclick="setLang('en')" aria-pressed="false"><span class="flag flag-gb" aria-hidden="true"></span>EN</button>
+        </div>
+        <a href="#contact" class="btn btn-primary" data-fr="Contacter" data-en="Contact">Contacter</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════
+     HERO
+══════════════════════════════════════════════ -->
+<section class="hero" id="hero" aria-label="Introduction">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-media fi d1" aria-hidden="true">
+        <img src="uploads/portrait-hero.png" alt="" class="hero-img">
+      </div>
+      <div class="hero-copy fi">
+        <span class="hero-tag">Jonas Weko, PhD</span>
+        <h1 class="hero-h1" data-fr="La rigueur de la recherche au service de vos décisions." data-en="Research-grade rigor at the service of your decisions.">La rigueur de la recherche au service de vos décisions.</h1>
+        <p class="hero-sub" data-fr="Analyste géopolitique &amp; consultant en intelligence économique" data-en="Geopolitical analyst &amp; economic intelligence consultant">Analyste géopolitique &amp; consultant en intelligence économique</p>
+        <p class="hero-val" data-fr="J'aide les décideurs publics, les institutions internationales et les entreprises à comprendre l'Afrique de l'Ouest et centrale pour mieux décider." data-en="I help public decision-makers, international institutions, and businesses understand West and Central Africa so they can make better decisions.">J'aide les décideurs publics, les institutions internationales et les entreprises à comprendre l'Afrique de l'Ouest et centrale pour mieux décider.</p>
+        <div class="hero-ctas">
+          <a href="#contact" class="btn btn-primary" data-fr="Contacter" data-en="Contact">Contacter</a>
+          <a href="#profil" class="btn btn-outline" data-fr="Qui suis-je ?" data-en="Who am I?">Qui suis-je ?</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="trust" aria-label="Institutions de référence">
+  <div class="container">
+    <div class="trust-inner">
+      <p class="trust-label" data-fr="Recherches, terrains et entretiens menés auprès de" data-en="Research, fieldwork, and interviews conducted with">Recherches, terrains et entretiens menés auprès de</p>
+      <div class="trust-logos" aria-label="FMI, Banque mondiale, BCEAO, UEMOA, AFD">
+        <div class="trust-item">
+          <img src="IMF-Seal_ENG_RGB.svg" alt="" class="trust-mark trust-mark--seal">
+          <span class="trust-name">FMI</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-mark-text">BM</span>
+          <span class="trust-name">Banque mondiale</span>
+        </div>
+        <div class="trust-item">
+          <img src="logo_fr.png" alt="" class="trust-mark">
+          <span class="trust-name">BCEAO</span>
+        </div>
+        <div class="trust-item">
+          <img src="Logo_UEMOA.png" alt="" class="trust-mark trust-mark--tall">
+          <span class="trust-name">UEMOA</span>
+        </div>
+        <div class="trust-item">
+          <img src="AFD_logo.svg" alt="" class="trust-mark">
+          <span class="trust-name">AFD</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     EXPERTISES
+══════════════════════════════════════════════ -->
+<section class="expertise" id="expertises" aria-labelledby="exp-h">
+  <div class="container">
+    <div class="sec-head fi">
+      <span class="sec-over" data-fr="Ce que je sais faire" data-en="What I do">Ce que je sais faire</span>
+      <h2 class="sec-title" id="exp-h" data-fr="Domaines d'expertise" data-en="Areas of Expertise">Domaines d'expertise</h2>
+      <div class="sec-bar"></div>
+    </div>
+    <div class="exp-grid">
+
+      <!-- Bloc 1 -->
+      <div class="exp-card fi" role="region">
+        <button class="exp-card-trigger" aria-expanded="false" aria-controls="exp-body-1">
+          <svg class="exp-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><circle cx="11" cy="11" r="3.5" opacity=".35"/></svg>
+          <span class="exp-card-hd">
+            <h3 class="exp-title" data-fr="Intelligence économique et stratégique" data-en="Economic &amp; Strategic Intelligence">Intelligence économique et stratégique</h3>
+          </span>
+          <svg class="exp-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="exp-body" id="exp-body-1">
+          <div class="exp-body-inner">
+            <p class="exp-def" data-fr="Collecter, recouper et analyser l'information utile pour éclairer une décision." data-en="Gathering, cross-checking, and analysing information to inform decision-making.">Collecter, recouper et analyser l'information utile pour éclairer une décision.</p>
+            <ul class="exp-list">
+              <li data-fr="Veille stratégique et détection de signaux faibles" data-en="Strategic monitoring and weak signal detection">Veille stratégique et détection de signaux faibles</li>
+              <li data-fr="OSINT et qualification de sources" data-en="OSINT and source qualification">OSINT et qualification de sources</li>
+              <li data-fr="Analyse de données qualitatives et quantitatives" data-en="Qualitative and quantitative data analysis">Analyse de données qualitatives et quantitatives</li>
+              <li data-fr="Cartographie des acteurs et des forces en présence" data-en="Stakeholder mapping and power dynamics analysis">Cartographie des acteurs et des forces en présence</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bloc 2 -->
+      <div class="exp-card fi d1" role="region">
+        <button class="exp-card-trigger" aria-expanded="false" aria-controls="exp-body-2">
+          <svg class="exp-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10A15.3 15.3 0 0 1 12 2z"/></svg>
+          <span class="exp-card-hd">
+            <h3 class="exp-title" data-fr="Relations internationales &amp; analyse géopolitique" data-en="International Relations &amp; Geopolitical Analysis">Relations internationales &amp; analyse géopolitique</h3>
+          </span>
+          <svg class="exp-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="exp-body" id="exp-body-2">
+          <div class="exp-body-inner">
+            <p class="exp-def" data-fr="Décrypter les dynamiques politiques, sécuritaires et institutionnelles d'une zone pour anticiper risques et opportunités." data-en="Deciphering political, security, and institutional dynamics to anticipate risks and opportunities.">Décrypter les dynamiques politiques, sécuritaires et institutionnelles d'une zone pour anticiper risques et opportunités.</p>
+            <ul class="exp-list">
+              <li data-fr="Analyse de risque pays et suivi sécuritaire" data-en="Country risk analysis and security monitoring">Analyse de risque pays et suivi sécuritaire</li>
+              <li data-fr="Économie politique internationale et institutions (FMI, BM, BCEAO, UEMOA)" data-en="International political economy and institutions (IMF, WB, BCEAO, UEMOA)">Économie politique internationale et institutions (FMI, BM, BCEAO, UEMOA)</li>
+              <li data-fr="Coopération monétaire et financière franco-africaine" data-en="Franco-African monetary and financial cooperation">Coopération monétaire et financière franco-africaine</li>
+              <li data-fr="Scénarios prospectifs" data-en="Prospective scenarios">Scénarios prospectifs</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bloc 3 -->
+      <div class="exp-card fi d1" role="region">
+        <button class="exp-card-trigger" aria-expanded="false" aria-controls="exp-body-3">
+          <svg class="exp-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg>
+          <span class="exp-card-hd">
+            <h3 class="exp-title" data-fr="Analyse et conseil politique" data-en="Political Analysis &amp; Advisory">Analyse et conseil politique</h3>
+          </span>
+          <svg class="exp-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="exp-body" id="exp-body-3">
+          <div class="exp-body-inner">
+            <p class="exp-def" data-fr="Comprendre les systèmes politiques et leurs logiques pour conseiller avec précision." data-en="Understanding political systems and their logic to provide precise advice.">Comprendre les systèmes politiques et leurs logiques pour conseiller avec précision.</p>
+            <ul class="exp-list">
+              <li data-fr="Analyse des politiques publiques (monétaires, économiques)" data-en="Public policy analysis (monetary, economic)">Analyse des politiques publiques (monétaires, économiques)</li>
+              <li data-fr="Analyse électorale" data-en="Electoral analysis">Analyse électorale</li>
+              <li data-fr="Analyse institutionnelle et réglementaire" data-en="Institutional and regulatory analysis">Analyse institutionnelle et réglementaire</li>
+              <li data-fr="Notes de position et policy papers" data-en="Position notes and policy papers">Notes de position et policy papers</li>
+              <li data-fr="Aide à la décision" data-en="Decision support">Aide à la décision</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bloc 4 -->
+      <div class="exp-card fi d2" role="region">
+        <button class="exp-card-trigger" aria-expanded="false" aria-controls="exp-body-4">
+          <svg class="exp-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <span class="exp-card-hd">
+            <h3 class="exp-title" data-fr="Affaires publiques" data-en="Public Affairs">Affaires publiques</h3>
+          </span>
+          <svg class="exp-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="exp-body" id="exp-body-4">
+          <div class="exp-body-inner">
+            <p class="exp-def" data-fr="Accompagner les entreprises dans leur implantation et leur financement à l'international, notamment en Afrique." data-en="Supporting companies in their international expansion and financing, particularly in Africa.">Accompagner les entreprises dans leur implantation et leur financement à l'international, notamment en Afrique.</p>
+            <ul class="exp-list">
+              <li data-fr="Stratégie d'entrée de marché et d'implantation" data-en="Market entry and establishment strategy">Stratégie d'entrée de marché et d'implantation</li>
+              <li data-fr="Cartographie des parties prenantes publiques" data-en="Public stakeholder mapping">Cartographie des parties prenantes publiques</li>
+              <li data-fr="Intermédiation institutionnelle" data-en="Institutional intermediation">Intermédiation institutionnelle</li>
+              <li data-fr="Montage de projets de développement et mobilisation de financements" data-en="Development project structuring and financing">Montage de projets de développement et mobilisation de financements</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     PROBLÉMATIQUES
+══════════════════════════════════════════════ -->
+<section class="prob" id="problematiques" aria-labelledby="prob-h">
+  <div class="container">
+    <div class="sec-head fi">
+      <span class="sec-over" data-fr="Vous reconnaissez-vous ?" data-en="Do you recognise yourself?">Vous reconnaissez-vous ?</span>
+      <h2 class="sec-title" id="prob-h" data-fr="Vos enjeux" data-en="Your challenges">Vos enjeux</h2>
+      <div class="sec-bar"></div>
+    </div>
+    <div class="enjeux-shell fi">
+      <div class="enjeux-tabs" role="tablist" aria-label="Publics concernés">
+        <button class="enjeu-tab is-active" type="button" role="tab" id="enjeu-tab-public" aria-selected="true" aria-controls="enjeu-panel-public" data-enjeu-target="public">
+          <span class="enjeu-tab-title">Acteurs publics &amp; gouvernements</span>
+          <span class="enjeu-tab-sub">Finances publiques, bailleurs, projets</span>
+        </button>
+        <button class="enjeu-tab" type="button" role="tab" id="enjeu-tab-institutions" aria-selected="false" aria-controls="enjeu-panel-institutions" data-enjeu-target="institutions">
+          <span class="enjeu-tab-title">Institutions internationales &amp; bailleurs</span>
+          <span class="enjeu-tab-sub">Terrain, risques, réformes</span>
+        </button>
+        <button class="enjeu-tab" type="button" role="tab" id="enjeu-tab-entreprises" aria-selected="false" aria-controls="enjeu-panel-entreprises" data-enjeu-target="entreprises">
+          <span class="enjeu-tab-title">Entreprises &amp; investisseurs</span>
+          <span class="enjeu-tab-sub">Marché, partenaires, investissement</span>
+        </button>
+      </div>
+
+      <div class="enjeux-panel-wrap">
+        <article class="enjeu-panel is-active" id="enjeu-panel-public" role="tabpanel" aria-labelledby="enjeu-tab-public" data-enjeu-panel="public">
+          <h3 class="enjeu-panel-title">Acteurs publics &amp; gouvernements</h3>
+          <ul class="enjeu-list">
+            <li>Comment prendre la mesure de la conjoncture économique et monétaire pour anticiper ses effets sur les finances d'un État et tenir le cap des prévisions ?</li>
+            <li>Comment traduire des recommandations d'audit en feuille de route budgétaire, notamment à travers un plan pluriannuel d'investissement ?</li>
+            <li>Quelles marges de manœuvre face aux bailleurs de fonds (FMI, Banque mondiale, AFD), et comment jouer ses cartes au bon moment ?</li>
+            <li>Comment monter, piloter et financer un projet de développement de bout en bout ?</li>
+            <li>Qui tire réellement les ficelles dans un dossier sensible, et quels rapports de force sont en jeu ?</li>
+          </ul>
+        </article>
+
+        <article class="enjeu-panel" id="enjeu-panel-institutions" role="tabpanel" aria-labelledby="enjeu-tab-institutions" data-enjeu-panel="institutions">
+          <h3 class="enjeu-panel-title">Institutions internationales &amp; bailleurs</h3>
+          <ul class="enjeu-list">
+            <li>Comment disposer d'une lecture de terrain indépendante et au plus près des réalités de l'Afrique de l'Ouest et centrale ?</li>
+            <li>Comment évaluer le risque politique et sécuritaire d'une zone d'intervention ?</li>
+            <li>Comment décrypter l'économie politique d'une réforme — zone franc, coopération monétaire — pour ne pas se laisser prendre de court ?</li>
+            <li>Comment suivre et évaluer l'impact d'un programme avec rigueur ?</li>
+          </ul>
+        </article>
+
+        <article class="enjeu-panel" id="enjeu-panel-entreprises" role="tabpanel" aria-labelledby="enjeu-tab-entreprises" data-enjeu-panel="entreprises">
+          <h3 class="enjeu-panel-title">Entreprises &amp; investisseurs</h3>
+          <ul class="enjeu-list">
+            <li>Faut-il franchir le pas sur ce marché ? Risque pays, stabilité institutionnelle, climat des affaires : comment peser le pour et le contre ?</li>
+            <li>Qui sont les bons interlocuteurs côté public, et comment tisser les bonnes relations sans brûler les étapes ?</li>
+            <li>Quels risques réputationnels, réglementaires ou sécuritaires anticiper ?</li>
+            <li>Comment sécuriser un investissement sur le long terme : due diligence politique et ancrage dans un réseau de partenaires locaux fiables ?</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     LIVRABLES
+══════════════════════════════════════════════ -->
+<section class="livr" id="livrables" aria-labelledby="livr-h">
+  <div class="container">
+    <div class="sec-head fi">
+      <span class="sec-over" data-fr="Une offre sur mesure" data-en="Tailored services">Une offre sur mesure</span>
+      <h2 class="sec-title" id="livr-h" data-fr="Prestations" data-en="Services">Prestations</h2>
+      <div class="sec-bar"></div>
+    </div>
+    <div class="livr-grid">
+      <div class="livr-card fi">
+        <h3 class="livr-title" data-fr="Analyse stratégique &amp; aide à la décision" data-en="Strategic analysis &amp; decision support">Analyse stratégique &amp; aide à la décision</h3>
+        <span class="badge bt" data-fr="Comprendre" data-en="Understand">Comprendre</span>
+        <p class="livr-desc" data-fr="Notes d'analyse, policy papers, cartographies d'acteurs et briefings pour éclairer rapidement un dossier sensible, une réforme ou un arbitrage." data-en="Analysis notes, policy papers, stakeholder maps and briefings to quickly clarify a sensitive issue, reform or decision.">Notes d'analyse, policy papers, cartographies d'acteurs et briefings pour éclairer rapidement un dossier sensible, une réforme ou un arbitrage.</p>
+      </div>
+      <div class="livr-card fi d1">
+        <h3 class="livr-title" data-fr="Risques, veille &amp; prospective" data-en="Risk, monitoring &amp; foresight">Risques, veille &amp; prospective</h3>
+        <span class="badge bv" data-fr="Anticiper" data-en="Anticipate">Anticiper</span>
+        <p class="livr-desc" data-fr="Évaluation du risque pays, suivi des signaux faibles, scénarios à 6, 12 ou 24 mois et lecture politique d'une zone d'intervention." data-en="Country-risk assessment, weak-signal monitoring, 6/12/24-month scenarios and political reading of an intervention area.">Évaluation du risque pays, suivi des signaux faibles, scénarios à 6, 12 ou 24 mois et lecture politique d'une zone d'intervention.</p>
+      </div>
+      <div class="livr-card fi d2">
+        <h3 class="livr-title" data-fr="Projets, implantation &amp; financements" data-en="Projects, market entry &amp; financing">Projets, implantation &amp; financements</h3>
+        <span class="badge bp" data-fr="Agir" data-en="Act">Agir</span>
+        <p class="livr-desc" data-fr="Appui à l'entrée de marché, montage de projets de développement, mobilisation de financements et transformation de recommandations en feuille de route opérationnelle." data-en="Market-entry support, development-project structuring, financing mobilisation and conversion of recommendations into an operational roadmap.">Appui à l'entrée de marché, montage de projets de développement, mobilisation de financements et transformation de recommandations en feuille de route opérationnelle.</p>
+      </div>
+    </div>
+    <p class="livr-note fi" data-fr="Pas de tarif affiché — chaque mission fait l'objet d'un devis personnalisé." data-en="No published rates — each mission is subject to a personalised quote.">Pas de tarif affiché — chaque mission fait l'objet d'un devis personnalisé.</p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     PROFIL
+══════════════════════════════════════════════ -->
+<section class="profil" id="profil" aria-labelledby="profil-h">
+  <div class="container">
+    <div class="profil-inner">
+      <!-- Photo -->
+      <div class="fi">
+        <img src="uploads/WhatsApp Image 2026-05-13 at 17.27.35.jpeg" alt="Jonas Weko, PhD — Portrait professionnel" class="profil-photo">
+      </div>
+      <!-- Content -->
+      <div class="fi d1">
+        <span class="profil-over" data-fr="Parcours" data-en="Background">Parcours</span>
+        <h2 class="profil-name" id="profil-h">Jonas Weko, PhD</h2>
+        <p class="profil-bio" data-fr="Docteur en science politique de l'Université Paris-Panthéon-Assas, j'ai consacré sept années de recherche à l'analyse économique, politique et monétaire des pays de la zone franc. Formé à Bordeaux puis à Paris, je mets la rigueur scientifique au service des décideurs pour éclairer leurs choix stratégiques. J'ai fondé Jonas Weko Consulting International pour accompagner les acteurs publics, les institutions internationales et les entreprises engagées en Afrique de l'Ouest et centrale." data-en="A political scientist (PhD, Paris-Panthéon-Assas), I spent seven years researching the economic, political, and monetary landscape of the CFA franc zone. Trained in Bordeaux and Paris, I bring scholarly rigor to bear on strategic decisions. I founded Jonas Weko Consulting International to support public actors, international institutions, and businesses engaged in West and Central Africa.">Docteur en science politique de l'Université Paris-Panthéon-Assas, j'ai consacré sept années de recherche à l'analyse économique, politique et monétaire des pays de la zone franc. Formé à Bordeaux puis à Paris, je mets la rigueur scientifique au service des décideurs pour éclairer leurs choix stratégiques. J'ai fondé Jonas Weko Consulting International pour accompagner les acteurs publics, les institutions internationales et les entreprises engagées en Afrique de l'Ouest et centrale.</p>
+        <div class="lang-tags">
+          <span class="lang-tag">Français</span>
+          <span class="lang-tag">English (C1)</span>
+          <span class="lang-tag">Mina</span>
+          <span class="lang-tag">Fon</span>
+        </div>
+      </div>
+    </div>
+    <!-- Accomplishments -->
+    <div class="acc-wrap fi">
+      <h3 class="acc-title" data-fr="Accomplissements" data-en="Accomplishments">Accomplissements</h3>
+      <div class="acc-grid">
+        <div class="acc-group">
+          <h4 class="acc-group-title">Recherche</h4>
+          <div class="acc-item"><span class="acc-blt">◆</span><span data-fr="Doctorat en science politique, Très Honorable avec félicitations du jury — Paris-Panthéon-Assas, nov. 2025 (dir. Pr. Yves Surel)" data-en="PhD in Political Science, Highest Honours with jury congratulations — Paris-Panthéon-Assas, Nov. 2025 (supervised by Prof. Yves Surel)">Doctorat en science politique, Très Honorable avec félicitations du jury — Paris-Panthéon-Assas, nov. 2025 (dir. Pr. Yves Surel)</span></div>
+          <div class="acc-item"><span class="acc-blt">◆</span><span data-fr="Thèse de 885 pages sur le régime monétaire du franc CFA depuis 1959" data-en="885-page thesis on the CFA franc monetary regime since 1959">Thèse de 885 pages sur le régime monétaire du franc CFA depuis 1959</span></div>
+          <div class="acc-item"><span class="acc-blt">◆</span><span data-fr="30+ notes de synthèse et policy papers ; 7+ communications en conférence" data-en="30+ briefing notes and policy papers; 7+ conference presentations">30+ notes de synthèse et policy papers ; 7+ communications en conférence</span></div>
+          <div class="acc-item"><span class="acc-blt">◆</span><span data-fr="Direction d'un ouvrage collectif (Les Crises, Mare &amp; Martin, 2026, 13 contributeurs)" data-en="Editor of a collective volume (Les Crises, Mare &amp; Martin, 2026, 13 contributors)">Direction d'un ouvrage collectif (Les Crises, Mare &amp; Martin, 2026, 13 contributeurs)</span></div>
+        </div>
+        <div class="acc-group">
+          <h4 class="acc-group-title">Terrain</h4>
+          <div class="acc-item"><span class="acc-blt">◆</span><span data-fr="Terrains : FMI (Washington), BCEAO (Dakar), UEMOA (Ouagadougou)" data-en="Field research: IMF (Washington), BCEAO (Dakar), UEMOA (Ouagadougou)">Terrains : FMI (Washington), BCEAO (Dakar), UEMOA (Ouagadougou)</span></div>
+          <div class="acc-item"><span class="acc-blt">◆</span><span data-fr="Entretiens avec d'ex-directeurs du Trésor, du FMI, de l'AFD et de la Banque de France" data-en="Interviews with former Treasury, IMF, AFD and Banque de France directors">Entretiens avec d'ex-directeurs du Trésor, du FMI, de l'AFD et de la Banque de France</span></div>
+          <div class="acc-item"><span class="acc-blt">◆</span><span data-fr="3 certifications AFD (conception, financement, suivi-évaluation de projets)" data-en="3 AFD certifications (project design, financing, monitoring &amp; evaluation)">3 certifications AFD (conception, financement, suivi-évaluation de projets)</span></div>
+        </div>
+        <div class="acc-group">
+          <h4 class="acc-group-title">Distinctions</h4>
+          <div class="acc-item"><span class="acc-blt">◆</span><span data-fr="Lauréat du Prix de thèse de l'Université Paris-Panthéon-Assas" data-en="Winner of the Paris-Panthéon-Assas Thesis Prize">Lauréat du Prix de thèse de l'Université Paris-Panthéon-Assas</span></div>
+          <div class="acc-item"><span class="acc-blt">◆</span><span data-fr="Présélectionné — Prix solennel de la Chancellerie de Paris 2026" data-en="Shortlisted — Prix solennel de la Chancellerie de Paris 2026">Présélectionné — Prix solennel de la Chancellerie de Paris 2026</span></div>
+          <div class="acc-item"><span class="acc-blt">◆</span><span data-fr="Présélectionné — Prix de thèse du GIS Études africaines en France 2026" data-en="Shortlisted — GIS African Studies Thesis Prize 2026">Présélectionné — Prix de thèse du GIS Études africaines en France 2026</span></div>
+          <div class="acc-item"><span class="acc-blt">◆</span><span data-fr="1er prix national de plaidoirie en droit international humanitaire (CICR, 2015)" data-en="1st national prize in advocacy on international humanitarian law (ICRC, 2015)">1er prix national de plaidoirie en droit international humanitaire (CICR, 2015)</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     RÉFÉRENCES
+══════════════════════════════════════════════ -->
+<section class="refs" id="references" aria-labelledby="refs-h">
+  <div class="container">
+    <div class="sec-head fi">
+      <h2 class="sec-title" id="refs-h" data-fr="Ils connaissent mon travail." data-en="They know my work.">Ils connaissent mon travail.</h2>
+      <div class="sec-bar"></div>
+    </div>
+    <div class="refs-grid">
+      <div class="ref-card fi">
+        <div class="ref-init" aria-hidden="true">RR</div>
+        <h3 class="ref-name">Rémi Rioux</h3>
+        <p class="ref-role" data-fr="Directeur général<br>Agence française de développement (AFD)" data-en="Director General<br>French Development Agency (AFD)">Directeur général<br>Agence française de développement (AFD)</p>
+      </div>
+      <div class="ref-card fi d1">
+        <div class="ref-init" aria-hidden="true">DL</div>
+        <h3 class="ref-name">Doha Lkasmi</h3>
+        <p class="ref-role" data-fr="Directrice générale<br>ESL-Rivington Maroc (Groupe ADIT)" data-en="General Manager<br>ESL-Rivington Morocco (ADIT Group)">Directrice générale<br>ESL-Rivington Maroc (Groupe ADIT)</p>
+      </div>
+      <div class="ref-card fi d2">
+        <div class="ref-init" aria-hidden="true">DS</div>
+        <h3 class="ref-name">David Stasavage</h3>
+        <p class="ref-role" data-fr="Professeur, New York University<br>Rapporteur de thèse" data-en="Professor, New York University<br>Thesis committee member">Professeur, New York University<br>Rapporteur de thèse</p>
+      </div>
+    </div>
+    <p class="refs-note fi" data-fr="Ces personnes connaissent mes travaux de recherche et de terrain. Leurs coordonnées sont disponibles sur demande." data-en="These individuals know my research and fieldwork. Their contact details are available upon request.">Ces personnes connaissent mes travaux de recherche et de terrain. Leurs coordonnées sont disponibles sur demande.</p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     CONTACT
+══════════════════════════════════════════════ -->
+<section class="contact" id="contact" aria-labelledby="contact-h">
+  <div class="container">
+    <div class="contact-head fi">
+      <h2 id="contact-h" data-fr="Parlons de votre besoin." data-en="Let's talk about your challenge.">Parlons de votre besoin.</h2>
+      <p data-fr="Une question, un dossier, une décision à éclairer ? Je réponds sous 48 h." data-en="A question, a file, a decision to clarify? I respond within 48 hours.">Une question, un dossier, une décision à éclairer ? Je réponds sous 48 h.</p>
+    </div>
+    <div class="contact-grid">
+      <!-- Info -->
+      <div class="fi">
+        <h3 data-fr="Coordonnées" data-en="Contact">Coordonnées</h3>
+        <a href="mailto:jonasweko@hotmail.com" class="contact-link" aria-label="Envoyer un email à Jonas Weko">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          jonasweko@hotmail.com
+        </a>
+        <a href="https://linkedin.com/in/jonasweko-phd" target="_blank" rel="noopener noreferrer" class="contact-link" aria-label="Profil LinkedIn de Jonas Weko">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          linkedin.com/in/jonasweko-phd
+        </a>
+        <p class="contact-note" data-fr="Pas de téléphone affiché — le premier contact se fait via le formulaire ou l'e-mail." data-en="No phone number listed — first contact is made via the form or email.">Pas de téléphone affiché — le premier contact se fait via le formulaire ou l'e-mail.</p>
+      </div>
+      <!-- Form -->
+      <div class="fi d1">
+        <form class="form-box" id="cform" novalidate aria-label="Formulaire de contact">
+          <div class="fg">
+            <label for="fn" data-fr="Nom" data-en="Name">Nom</label>
+            <input type="text" id="fn" name="nom" placeholder="Votre nom" required aria-required="true">
+            <span class="f-err" id="e-fn" data-fr="Ce champ est requis." data-en="This field is required.">Ce champ est requis.</span>
+          </div>
+          <div class="fg">
+            <label for="fo" data-fr="Organisation" data-en="Organization">Organisation</label>
+            <input type="text" id="fo" name="org" placeholder="Votre organisation">
+          </div>
+          <div class="fg">
+            <label for="ft" data-fr="Type de besoin" data-en="Type of need">Type de besoin</label>
+            <select id="ft" name="type" required aria-required="true">
+              <option value="" data-fr="— Sélectionner —" data-en="— Select —">— Sélectionner —</option>
+              <option value="geo" data-fr="Analyse géopolitique" data-en="Geopolitical analysis">Analyse géopolitique</option>
+              <option value="risk" data-fr="Risque pays" data-en="Country risk">Risque pays</option>
+              <option value="veille" data-fr="Veille stratégique" data-en="Strategic monitoring">Veille stratégique</option>
+              <option value="impl" data-fr="Implantation" data-en="Market entry">Implantation</option>
+              <option value="other" data-fr="Autre" data-en="Other">Autre</option>
+            </select>
+            <span class="f-err" id="e-ft" data-fr="Veuillez sélectionner un type." data-en="Please select a type.">Veuillez sélectionner un type.</span>
+          </div>
+          <div class="fg">
+            <label for="fm" data-fr="Message" data-en="Message">Message</label>
+            <textarea id="fm" name="msg" placeholder="Votre message" required aria-required="true"></textarea>
+            <span class="f-err" id="e-fm" data-fr="Ce champ est requis." data-en="This field is required.">Ce champ est requis.</span>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center" data-fr="Envoyer" data-en="Send">Envoyer</button>
+          <div class="f-ok" id="fok" role="alert">
+            <span data-fr="✓ Message envoyé. Je vous répondrai dans les 48 heures." data-en="✓ Message sent. I will reply within 48 hours.">✓ Message envoyé. Je vous répondrai dans les 48 heures.</span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════ -->
+<footer aria-label="Pied de page">
+  <div class="container">
+    <div class="foot-inner">
+      <span class="foot-brand">Jonas Weko Consulting International &nbsp;·&nbsp; 2026</span>
+      <div class="foot-soc">
+        <a href="https://linkedin.com/in/jonasweko-phd" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Jonas Weko">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+      </div>
+      <div class="foot-legal">
+        <a href="#" data-fr="Mentions légales" data-en="Legal notice">Mentions légales</a>
+      </div>
+    </div>
+    <p class="foot-sub" data-fr="[Statut juridique à compléter]" data-en="[Legal status to be completed]">[Statut juridique à compléter]</p>
+  </div>
+</footer>
+
+<!-- ══════════════════════════════════════════
+     JAVASCRIPT
+══════════════════════════════════════════════ -->
+<script>
+/* ── EXPERTISE ACCORDION ── */
+document.querySelectorAll('.exp-card-trigger').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const card = btn.closest('.exp-card');
+    const isOpen = card.classList.contains('open');
+    // Close all
+    document.querySelectorAll('.exp-card').forEach(c => {
+      c.classList.remove('open');
+      c.querySelector('.exp-card-trigger').setAttribute('aria-expanded', 'false');
+    });
+    // Open clicked (if it was closed)
+    if (!isOpen) {
+      card.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
+
+/* ── LANGUAGE SWITCHER ── */
+/* â”€â”€ ENJEUX TABS â”€â”€ */
+document.querySelectorAll('.enjeu-tab').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const target = btn.getAttribute('data-enjeu-target');
+    document.querySelectorAll('.enjeu-tab').forEach(tabBtn => {
+      const active = tabBtn === btn;
+      tabBtn.classList.toggle('is-active', active);
+      tabBtn.setAttribute('aria-selected', String(active));
+    });
+    document.querySelectorAll('.enjeu-panel').forEach(panel => {
+      panel.classList.toggle('is-active', panel.getAttribute('data-enjeu-panel') === target);
+    });
+  });
+});
+
+let lang = 'fr';
+
+function setLang(l) {
+  lang = l;
+  document.documentElement.lang = l;
+  document.getElementById('btn-fr').classList.toggle('act', l === 'fr');
+  document.getElementById('btn-fr').setAttribute('aria-pressed', String(l === 'fr'));
+  document.getElementById('btn-en').classList.toggle('act', l === 'en');
+  document.getElementById('btn-en').setAttribute('aria-pressed', String(l === 'en'));
+
+  document.querySelectorAll('[data-fr]').forEach(el => {
+    const val = el.getAttribute('data-' + l);
+    if (val === null) return;
+    // Handle innerHTML for elements with <br>
+    if (val.includes('<br>')) { el.innerHTML = val; }
+    else { el.textContent = val; }
+  });
+
+  // Placeholders
+  const phs = { fn: {fr:'Votre nom', en:'Your name'}, fo: {fr:'Votre organisation', en:'Your organization'}, fm: {fr:'Votre message', en:'Your message'} };
+  for (const [id, v] of Object.entries(phs)) {
+    const el = document.getElementById(id);
+    if (el) el.placeholder = v[l];
+  }
+}
+
+/* ── NAVBAR SHADOW ON SCROLL ── */
+const nav = document.getElementById('main-nav');
+window.addEventListener('scroll', () => { nav.classList.toggle('shad', scrollY > 8); }, {passive:true});
+
+/* ── ACTIVE NAV LINK ── */
+const sections = [...document.querySelectorAll('section[id]')];
+const navAs = [...document.querySelectorAll('.nav-links a')];
+function updateNav() {
+  const top = scrollY + 80;
+  let cur = '';
+  sections.forEach(s => { if (s.offsetTop <= top) cur = s.id; });
+  navAs.forEach(a => a.classList.toggle('act', a.getAttribute('href') === '#' + cur));
+}
+window.addEventListener('scroll', updateNav, {passive:true});
+
+/* ── SMOOTH SCROLL ── */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const id = a.getAttribute('href').slice(1);
+    if (!id) return;
+    const t = document.getElementById(id);
+    if (!t) return;
+    e.preventDefault();
+    window.scrollTo({ top: t.getBoundingClientRect().top + scrollY - 64, behavior: 'smooth' });
+  });
+});
+
+/* ── SCROLL FADE-IN ── */
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('anim');
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
+
+document.querySelectorAll('.fi').forEach(el => io.observe(el));
+
+/* ── FORM VALIDATION ── */
+document.getElementById('cform').addEventListener('submit', e => {
+  e.preventDefault();
+  let ok = true;
+
+  const check = (id, errId) => {
+    const el = document.getElementById(id);
+    const err = document.getElementById(errId);
+    const empty = !el.value.trim();
+    err.style.display = empty ? 'block' : 'none';
+    if (empty) ok = false;
+  };
+  check('fn', 'e-fn');
+  check('fm', 'e-fm');
+
+  const ft = document.getElementById('ft');
+  const eft = document.getElementById('e-ft');
+  if (!ft.value) { eft.style.display = 'block'; ok = false; } else { eft.style.display = 'none'; }
+
+  if (ok) {
+    e.target.reset();
+    const fok = document.getElementById('fok');
+    fok.style.display = 'block';
+    // Update success message for current language
+    const span = fok.querySelector('[data-fr]');
+    span.textContent = lang === 'en' ? '✓ Message sent. I will reply within 48 hours.' : '✓ Message envoyé. Je vous répondrai dans les 48 heures.';
+    setTimeout(() => { fok.style.display = 'none'; }, 6000);
+  }
+});
+</script>
+</body>
+</html>
