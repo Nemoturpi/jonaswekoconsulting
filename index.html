@@ -78,8 +78,8 @@ button{cursor:pointer;font-family:var(--ff-b)}
 .flag-fr{background:linear-gradient(90deg,#0055a4 0 33.333%,#fff 33.333% 66.666%,#ef4135 66.666% 100%)}
 .flag-gb{background:center/cover no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3CclipPath id='a'%3E%3Cpath d='M0 0h60v30H0z'/%3E%3C/clipPath%3E%3Cpath fill='%23012169' d='M0 0h60v30H0z'/%3E%3Cg clip-path='url(%23a)'%3E%3Cpath stroke='%23fff' stroke-width='6' d='M0 0l60 30M60 0L0 30'/%3E%3Cpath stroke='%23c8102e' stroke-width='3.2' d='M0 0l60 30M60 0L0 30'/%3E%3Cpath stroke='%23fff' stroke-width='10' d='M30 0v30M0 15h60'/%3E%3Cpath stroke='%23c8102e' stroke-width='6' d='M30 0v30M0 15h60'/%3E%3C/g%3E%3C/svg%3E")}
 .lang-sep{color:rgba(13,31,60,.22);font-size:11px}
-.nav .btn-primary{background:var(--navy);border-color:var(--navy);color:var(--white)}
-.nav .btn-primary:hover{background:#142a4d;box-shadow:0 6px 18px rgba(13,31,60,.2)}
+.nav .btn-primary{background:#f1dfb6;border-color:#d6b165;color:var(--navy)}
+.nav .btn-primary:hover{background:#e7cf94;border-color:#c5922a;box-shadow:0 6px 18px rgba(13,31,60,.14)}
 
 /* ════════════════════════════════════════════════════════
    HERO
@@ -93,8 +93,8 @@ button{cursor:pointer;font-family:var(--ff-b)}
 .hero-val{font-size:17px;color:#4e5665;max-width:650px;margin:0 0 26px;line-height:1.6}
 .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;justify-content:flex-start}
 .hero .btn{min-width:190px;justify-content:center}
-.hero .btn-primary{background:var(--navy);border-color:var(--navy);color:var(--white)}
-.hero .btn-primary:hover{background:#142a4d;box-shadow:0 6px 18px rgba(13,31,60,.22)}
+.hero .btn-primary{background:#f1dfb6;border-color:#d6b165;color:var(--navy);box-shadow:0 8px 22px rgba(13,31,60,.1)}
+.hero .btn-primary:hover{background:#e7cf94;border-color:#c5922a;box-shadow:0 10px 26px rgba(13,31,60,.16)}
 .hero .btn-outline{border-color:rgba(13,31,60,.38);color:var(--navy)}
 .hero .btn-outline:hover{border-color:var(--navy);background:rgba(13,31,60,.05)}
 .hero-media{position:relative;justify-self:start;width:100%;max-width:340px}
@@ -102,17 +102,18 @@ button{cursor:pointer;font-family:var(--ff-b)}
 .hero-img{width:100%;aspect-ratio:1/1;object-fit:contain;object-position:center;background:#e7e5df;border:1px solid rgba(13,31,60,.16);box-shadow:0 18px 42px rgba(13,31,60,.16)}
 
 /* Trust banner */
-.trust{background:var(--white);border-bottom:1px solid rgba(13,31,60,.08);padding:28px 0}
+.trust{background:var(--white);border-bottom:1px solid rgba(13,31,60,.08);padding:34px 0}
 .trust-inner{display:grid;grid-template-columns:260px 1fr;gap:34px;align-items:center}
 .trust-label{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(13,31,60,.54);line-height:1.55}
 .trust-logos{display:grid;grid-template-columns:repeat(5,minmax(110px,1fr));gap:14px;align-items:start}
-.trust-item{position:relative;display:grid;grid-template-rows:58px auto;place-items:center;gap:9px;min-height:0;padding:0;overflow:visible}
-.trust-item::before{content:'';grid-column:1;grid-row:1;width:100%;height:58px;border:1px solid rgba(13,31,60,.08);background:#f1f0eb}
-.trust-item::after{content:'';grid-column:1;grid-row:1;width:100%;height:58px;background:rgba(247,245,239,.42);pointer-events:none}
-.trust-mark{grid-column:1;grid-row:1;position:relative;z-index:1;height:28px;max-width:92px;object-fit:contain;filter:grayscale(1) contrast(.9);opacity:.62}
-.trust-mark--seal{height:32px}
-.trust-mark--tall{height:36px}
-.trust-mark-text{grid-column:1;grid-row:1;position:relative;z-index:1;font-family:var(--ff-h);font-size:24px;font-weight:700;letter-spacing:.08em;color:rgba(13,31,60,.5);line-height:1}
+.trust-item{position:relative;display:grid;grid-template-rows:128px auto;place-items:center;gap:9px;min-height:0;padding:0;overflow:visible;text-decoration:none;color:inherit}
+.trust-item::before{content:'';grid-column:1;grid-row:1;width:100%;height:128px;border:1px solid rgba(13,31,60,.08);background:#f1f0eb}
+.trust-item::after{content:'';grid-column:1;grid-row:1;width:100%;height:128px;background:rgba(247,245,239,.42);pointer-events:none}
+.trust-item:hover::before{border-color:rgba(197,146,42,.28)}
+.trust-mark{grid-column:1;grid-row:1;position:relative;z-index:1;height:84px;max-width:132px;object-fit:contain;filter:grayscale(1) contrast(.9);opacity:.68}
+.trust-mark--seal{height:90px}
+.trust-mark--tall{height:98px}
+.trust-mark-text{grid-column:1;grid-row:1;position:relative;z-index:1;font-family:var(--ff-h);font-size:72px;font-weight:700;letter-spacing:.08em;color:rgba(13,31,60,.5);line-height:1}
 .trust-name{grid-column:1;grid-row:2;position:relative;z-index:1;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(13,31,60,.62);text-align:center;line-height:1.2}
 
 /* ════════════════════════════════════════════════════════
@@ -172,7 +173,6 @@ button{cursor:pointer;font-family:var(--ff-b)}
 .bp{background:rgba(107,26,42,.1);color:var(--bord)}
 .bv{background:rgba(197,146,42,.12);color:#8a6418}
 .livr-desc{font-size:13px;color:#555;line-height:1.6}
-.livr-note{text-align:center;font-size:13.5px;font-style:italic;color:#999}
 
 /* ════════════════════════════════════════════════════════
    PROFIL
@@ -199,13 +199,12 @@ button{cursor:pointer;font-family:var(--ff-b)}
    REFERENCES
 ════════════════════════════════════════════════════════ */
 .refs{background:var(--gray);padding:var(--sp)}
-.refs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-bottom:22px}
+.refs-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:22px}
 .ref-card{background:var(--white);border:1px solid rgba(197,146,42,.22);box-shadow:0 2px 14px rgba(13,31,60,.06);padding:30px 22px;text-align:center;transition:box-shadow .25s}
 .ref-card:hover{box-shadow:0 6px 22px rgba(13,31,60,.1)}
-.ref-init{width:62px;height:62px;background:var(--bord);border:2px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--ff-h);font-size:24px;font-weight:700;color:var(--gold);margin:0 auto 14px}
+.ref-photo{width:86px;height:86px;border-radius:50%;object-fit:cover;object-position:center;border:2px solid rgba(197,146,42,.55);display:block;margin:0 auto 16px;filter:grayscale(.18);box-shadow:0 8px 20px rgba(13,31,60,.1)}
 .ref-name{font-family:var(--ff-h);font-size:22px;font-weight:700;color:var(--navy);letter-spacing:.02em;text-transform:uppercase;line-height:1.05;margin-bottom:6px}
 .ref-role{font-size:13px;color:var(--txt2);line-height:1.5}
-.refs-note{text-align:center;font-size:13px;font-style:italic;color:#999}
 
 /* ════════════════════════════════════════════════════════
    CONTACT
@@ -219,7 +218,6 @@ button{cursor:pointer;font-family:var(--ff-b)}
 .contact-link{display:flex;align-items:center;gap:11px;color:var(--gold);font-size:14.5px;margin-bottom:14px;transition:opacity .2s}
 .contact-link:hover{opacity:.75}
 .contact-link svg{width:17px;height:17px;flex-shrink:0}
-.contact-note{font-size:12.5px;font-style:italic;color:rgba(255,255,255,.35);margin-top:22px;line-height:1.6}
 /* Form */
 .form-box{background:var(--navy2);padding:32px;border:1px solid rgba(197,146,42,.18)}
 .fg{margin-bottom:18px}
@@ -236,15 +234,11 @@ button{cursor:pointer;font-family:var(--ff-b)}
 /* ════════════════════════════════════════════════════════
    FOOTER
 ════════════════════════════════════════════════════════ */
-footer{background:var(--navy);border-top:1px solid rgba(197,146,42,.28);padding:22px 0 14px}
+footer{background:var(--navy);border-top:1px solid rgba(197,146,42,.28);padding:22px 0}
 .foot-inner{display:flex;align-items:center;justify-content:space-between}
 .foot-brand{font-family:var(--ff-h);font-size:16px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;color:rgba(255,255,255,.55)}
-.foot-soc a{color:rgba(255,255,255,.5);transition:color .2s}
-.foot-soc a:hover{color:var(--gold)}
-.foot-soc svg{width:19px;height:19px}
 .foot-legal a{font-size:12px;color:rgba(255,255,255,.38);transition:color .2s}
 .foot-legal a:hover{color:rgba(255,255,255,.65)}
-.foot-sub{text-align:center;font-size:11.5px;font-style:italic;color:rgba(255,255,255,.25);margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,.05)}
 
 /* ════════════════════════════════════════════════════════
    RESPONSIVE
@@ -258,6 +252,7 @@ footer{background:var(--navy);border-top:1px solid rgba(197,146,42,.28);padding:
   .hero-sub{font-size:24px}
   .hero-media{max-width:300px}
   .livr-grid{grid-template-columns:1fr 1fr}
+  .refs-grid{grid-template-columns:1fr 1fr}
   .profil-inner{grid-template-columns:240px 1fr;gap:40px}
   .acc-grid{grid-template-columns:1fr}
 }
@@ -347,26 +342,26 @@ footer{background:var(--navy);border-top:1px solid rgba(197,146,42,.28);padding:
     <div class="trust-inner">
       <p class="trust-label" data-fr="Recherches, terrains et entretiens menés auprès de" data-en="Research, fieldwork, and interviews conducted with">Recherches, terrains et entretiens menés auprès de</p>
       <div class="trust-logos" aria-label="FMI, Banque mondiale, BCEAO, UEMOA, AFD">
-        <div class="trust-item">
+        <a class="trust-item" href="https://www.imf.org/" target="_blank" rel="noopener noreferrer" aria-label="Site du FMI">
           <img src="IMF-Seal_ENG_RGB.svg" alt="" class="trust-mark trust-mark--seal">
           <span class="trust-name">FMI</span>
-        </div>
-        <div class="trust-item">
+        </a>
+        <a class="trust-item" href="https://www.worldbank.org/" target="_blank" rel="noopener noreferrer" aria-label="Site de la Banque mondiale">
           <span class="trust-mark-text">BM</span>
           <span class="trust-name">Banque mondiale</span>
-        </div>
-        <div class="trust-item">
+        </a>
+        <a class="trust-item" href="https://www.bceao.int/" target="_blank" rel="noopener noreferrer" aria-label="Site de la BCEAO">
           <img src="logo_fr.png" alt="" class="trust-mark">
           <span class="trust-name">BCEAO</span>
-        </div>
-        <div class="trust-item">
+        </a>
+        <a class="trust-item" href="https://www.uemoa.int/" target="_blank" rel="noopener noreferrer" aria-label="Site de l'UEMOA">
           <img src="Logo_UEMOA.png" alt="" class="trust-mark trust-mark--tall">
           <span class="trust-name">UEMOA</span>
-        </div>
-        <div class="trust-item">
+        </a>
+        <a class="trust-item" href="https://www.afd.fr/" target="_blank" rel="noopener noreferrer" aria-label="Site de l'AFD">
           <img src="AFD_logo.svg" alt="" class="trust-mark">
           <span class="trust-name">AFD</span>
-        </div>
+        </a>
       </div>
     </div>
   </div>
@@ -566,7 +561,6 @@ footer{background:var(--navy);border-top:1px solid rgba(197,146,42,.28);padding:
         <p class="livr-desc" data-fr="Appui à l'entrée de marché, montage de projets de développement, mobilisation de financements et transformation de recommandations en feuille de route opérationnelle." data-en="Market-entry support, development-project structuring, financing mobilisation and conversion of recommendations into an operational roadmap.">Appui à l'entrée de marché, montage de projets de développement, mobilisation de financements et transformation de recommandations en feuille de route opérationnelle.</p>
       </div>
     </div>
-    <p class="livr-note fi" data-fr="Pas de tarif affiché — chaque mission fait l'objet d'un devis personnalisé." data-en="No published rates — each mission is subject to a personalised quote.">Pas de tarif affiché — chaque mission fait l'objet d'un devis personnalisé.</p>
   </div>
 </section>
 
@@ -633,22 +627,26 @@ footer{background:var(--navy);border-top:1px solid rgba(197,146,42,.28);padding:
     </div>
     <div class="refs-grid">
       <div class="ref-card fi">
-        <div class="ref-init" aria-hidden="true">RR</div>
+        <img src="remirioux.jpg" alt="" class="ref-photo">
         <h3 class="ref-name">Rémi Rioux</h3>
         <p class="ref-role" data-fr="Directeur général<br>Agence française de développement (AFD)" data-en="Director General<br>French Development Agency (AFD)">Directeur général<br>Agence française de développement (AFD)</p>
       </div>
       <div class="ref-card fi d1">
-        <div class="ref-init" aria-hidden="true">DL</div>
+        <img src="Doha Lkasmi.jpg" alt="" class="ref-photo">
         <h3 class="ref-name">Doha Lkasmi</h3>
         <p class="ref-role" data-fr="Directrice générale<br>ESL-Rivington Maroc (Groupe ADIT)" data-en="General Manager<br>ESL-Rivington Morocco (ADIT Group)">Directrice générale<br>ESL-Rivington Maroc (Groupe ADIT)</p>
       </div>
       <div class="ref-card fi d2">
-        <div class="ref-init" aria-hidden="true">DS</div>
+        <img src="David_Stasavage.jpg" alt="" class="ref-photo">
         <h3 class="ref-name">David Stasavage</h3>
         <p class="ref-role" data-fr="Professeur, New York University<br>Rapporteur de thèse" data-en="Professor, New York University<br>Thesis committee member">Professeur, New York University<br>Rapporteur de thèse</p>
       </div>
+      <div class="ref-card fi d3">
+        <img src="YvesSurel.png" alt="" class="ref-photo">
+        <h3 class="ref-name">Yves Surel</h3>
+        <p class="ref-role" data-fr="Professeur de sciences politiques<br>Université Paris-Panthéon-Assas<br>Directeur du CERSA<br>Directeur de thèse" data-en="Professor of political science<br>Paris-Panthéon-Assas University<br>Director of CERSA<br>Thesis supervisor">Professeur de sciences politiques<br>Université Paris-Panthéon-Assas<br>Directeur du CERSA<br>Directeur de thèse</p>
+      </div>
     </div>
-    <p class="refs-note fi" data-fr="Ces personnes connaissent mes travaux de recherche et de terrain. Leurs coordonnées sont disponibles sur demande." data-en="These individuals know my research and fieldwork. Their contact details are available upon request.">Ces personnes connaissent mes travaux de recherche et de terrain. Leurs coordonnées sont disponibles sur demande.</p>
   </div>
 </section>
 
@@ -673,7 +671,6 @@ footer{background:var(--navy);border-top:1px solid rgba(197,146,42,.28);padding:
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
           linkedin.com/in/jonasweko-phd
         </a>
-        <p class="contact-note" data-fr="Pas de téléphone affiché — le premier contact se fait via le formulaire ou l'e-mail." data-en="No phone number listed — first contact is made via the form or email.">Pas de téléphone affiché — le premier contact se fait via le formulaire ou l'e-mail.</p>
       </div>
       <!-- Form -->
       <div class="fi d1">
@@ -721,16 +718,10 @@ footer{background:var(--navy);border-top:1px solid rgba(197,146,42,.28);padding:
   <div class="container">
     <div class="foot-inner">
       <span class="foot-brand">Jonas Weko Consulting International &nbsp;·&nbsp; 2026</span>
-      <div class="foot-soc">
-        <a href="https://linkedin.com/in/jonasweko-phd" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Jonas Weko">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-        </a>
-      </div>
       <div class="foot-legal">
         <a href="#" data-fr="Mentions légales" data-en="Legal notice">Mentions légales</a>
       </div>
     </div>
-    <p class="foot-sub" data-fr="[Statut juridique à compléter]" data-en="[Legal status to be completed]">[Statut juridique à compléter]</p>
   </div>
 </footer>
 
