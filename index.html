@@ -174,6 +174,9 @@ button{cursor:pointer;font-family:var(--ff-b)}
 .bp{background:rgba(107,26,42,.1);color:var(--bord)}
 .bv{background:rgba(197,146,42,.12);color:#8a6418}
 .livr-desc{font-size:15.5px;color:#555;line-height:1.65}
+.livr-list{display:grid;gap:9px;margin-top:12px}
+.livr-list li{position:relative;padding-left:17px;font-size:15.5px;color:#555;line-height:1.55}
+.livr-list li::before{content:'';position:absolute;left:0;top:.68em;width:6px;height:6px;background:var(--gold)}
 
 /* ════════════════════════════════════════════════════════
    PROFIL
@@ -553,17 +556,32 @@ footer{background:var(--navy);border-top:1px solid rgba(197,146,42,.28);padding:
       <div class="livr-card fi">
         <h3 class="livr-title" data-fr="Analyse stratégique &amp; aide à la décision" data-en="Strategic analysis &amp; decision support">Analyse stratégique &amp; aide à la décision</h3>
         <span class="badge bt" data-fr="Comprendre" data-en="Understand">Comprendre</span>
-        <p class="livr-desc" data-fr="Notes d'analyse, policy papers, cartographies d'acteurs et briefings pour éclairer rapidement un dossier sensible, une réforme ou un arbitrage." data-en="Analysis notes, policy papers, stakeholder maps and briefings to quickly clarify a sensitive issue, reform or decision.">Notes d'analyse, policy papers, cartographies d'acteurs et briefings pour éclairer rapidement un dossier sensible, une réforme ou un arbitrage.</p>
+        <ul class="livr-list">
+          <li data-fr="Notes d'analyse" data-en="Analysis notes">Notes d'analyse</li>
+          <li data-fr="Policy papers" data-en="Policy papers">Policy papers</li>
+          <li data-fr="Cartographies d'acteurs" data-en="Stakeholder maps">Cartographies d'acteurs</li>
+          <li data-fr="Briefings pour éclairer rapidement un dossier sensible, une réforme ou un arbitrage" data-en="Briefings to quickly clarify a sensitive issue, reform, or decision">Briefings pour éclairer rapidement un dossier sensible, une réforme ou un arbitrage</li>
+        </ul>
       </div>
       <div class="livr-card fi d1">
         <h3 class="livr-title" data-fr="Risques, veille &amp; prospective" data-en="Risk, monitoring &amp; foresight">Risques, veille &amp; prospective</h3>
         <span class="badge bv" data-fr="Anticiper" data-en="Anticipate">Anticiper</span>
-        <p class="livr-desc" data-fr="Évaluation du risque pays, suivi des signaux faibles, scénarios à 6, 12 ou 24 mois et lecture politique d'une zone d'intervention." data-en="Country-risk assessment, weak-signal monitoring, 6/12/24-month scenarios and political reading of an intervention area.">Évaluation du risque pays, suivi des signaux faibles, scénarios à 6, 12 ou 24 mois et lecture politique d'une zone d'intervention.</p>
+        <ul class="livr-list">
+          <li data-fr="Évaluation du risque pays" data-en="Country-risk assessment">Évaluation du risque pays</li>
+          <li data-fr="Suivi des signaux faibles" data-en="Weak-signal monitoring">Suivi des signaux faibles</li>
+          <li data-fr="Scénarios à 6, 12 ou 24 mois" data-en="6, 12, or 24-month scenarios">Scénarios à 6, 12 ou 24 mois</li>
+          <li data-fr="Lecture politique d'une zone d'intervention" data-en="Political reading of an intervention area">Lecture politique d'une zone d'intervention</li>
+        </ul>
       </div>
       <div class="livr-card fi d2">
         <h3 class="livr-title" data-fr="Projets, implantation &amp; financements" data-en="Projects, market entry &amp; financing">Projets, implantation &amp; financements</h3>
         <span class="badge bp" data-fr="Agir" data-en="Act">Agir</span>
-        <p class="livr-desc" data-fr="Appui à l'entrée de marché, montage de projets de développement, mobilisation de financements et transformation de recommandations en feuille de route opérationnelle." data-en="Market-entry support, development-project structuring, financing mobilisation and conversion of recommendations into an operational roadmap.">Appui à l'entrée de marché, montage de projets de développement, mobilisation de financements et transformation de recommandations en feuille de route opérationnelle.</p>
+        <ul class="livr-list">
+          <li data-fr="Appui à l'entrée de marché" data-en="Market-entry support">Appui à l'entrée de marché</li>
+          <li data-fr="Montage de projets de développement" data-en="Development-project structuring">Montage de projets de développement</li>
+          <li data-fr="Mobilisation de financements" data-en="Financing mobilisation">Mobilisation de financements</li>
+          <li data-fr="Transformation de recommandations en feuille de route opérationnelle" data-en="Conversion of recommendations into an operational roadmap">Transformation de recommandations en feuille de route opérationnelle</li>
+        </ul>
       </div>
     </div>
   </div>
